@@ -1,0 +1,4 @@
+aiomysql
+aiohttp
+cryptography
+beautifulsoup4

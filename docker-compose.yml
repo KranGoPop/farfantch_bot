@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    image: mysql
+    restart: always
+    env_file: config.env
+    command: --init-file /data/application/init.sql
+    volumes:
+        - ./init.sql:/data/application/init.sql
+  stealer:
+    build: stealer/
+    command: python -u ./stealer.py
+    depends_on:
+      - db
+  bot:
+    build: bot/
+    command: python -u ./bot.py
+    #restart: always
+    env_file: config.env
+    depends_on:
+      - stealer
