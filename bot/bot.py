@@ -57,7 +57,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 def main() -> None:
   """Start the bot."""
   # Create the Application and pass it your bot's token.
-  if os.environ.get('BOT_TOKEN') == None or os.environ.get('BOT_TOKEN') == 'specify_your_token_here':
+  if os.environ.get('BOT_TOKEN') == None or os.environ.get('BOT_TOKEN') == 'your_telegram_bot_token':
   print("BOT: You should specify bot's token in config.env file")
   return
 
