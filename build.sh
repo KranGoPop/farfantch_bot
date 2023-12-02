@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $1 == '-r' ]; then
+if [[ -n $1  &&  $1 == '-r' ]]; then
   sudo docker-compose build;
 fi;
 
