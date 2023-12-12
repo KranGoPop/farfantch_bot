@@ -10,12 +10,13 @@ services:
   stealer:
     build: stealer/
     command: python -u ./stealer.py
+    env_file: config.env
     depends_on:
       - db
   bot:
     build: bot/
     command: python -u ./bot.py
-    #restart: always
     env_file: config.env
+    #restart: always
     depends_on:
       - stealer
